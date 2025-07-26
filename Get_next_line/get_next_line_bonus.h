@@ -26,9 +26,9 @@
 
 char	*get_next_line(int fd);
 
-size_t	ft_strlen(char *str);
-char	*ft_strchr(const char *str, int c);
-char	*ft_strjoin(char *str1, char *str2);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
+size_t	ft_strlen_gnl(char *str);
+char	*ft_strchr_gnl(const char *str, int c);
+char	*ft_strjoin_gnl(char *str1, char *str2);
+char	*ft_substr_gnl(char const *s, unsigned int start, size_t len);
 
 #endif

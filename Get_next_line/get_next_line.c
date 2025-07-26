@@ -29,7 +29,7 @@ static char	*ft_read_buffer(int fd, char *left_c)
 		return (free(left_c), NULL);
 	bytes_read = 1;
 	temp = NULL;
-	while (!left_c || (!ft_strchr(left_c, '\n') && bytes_read > 0))
+	while (!left_c || (!ft_strchr_gnl(left_c, '\n') && bytes_read > 0))
 	{
 		bytes_read = read(fd, buffer, BUFFER_SIZE);
 		if (bytes_read < 0)
@@ -37,7 +37,7 @@ static char	*ft_read_buffer(int fd, char *left_c)
 		if (bytes_read == 0)
 			break ;
 		buffer[bytes_read] = '\0';
-		temp = ft_strjoin(left_c, buffer);
+		temp = ft_strjoin_gnl(left_c, buffer);
 		if (!temp)
 			return (free(buffer), free(left_c), NULL);
 		free(left_c);
@@ -63,10 +63,10 @@ char	*get_next_line(int fd)
 		i++;
 	if (remainder[i] == '\n')
 		i++;
-	line = ft_substr(remainder, 0, i);
+	line = ft_substr_gnl(remainder, 0, i);
 	if (!line)
 		return (free(remainder), remainder = NULL, NULL);
-	temp = ft_substr(remainder, i, ft_strlen(remainder) - i);
+	temp = ft_substr_gnl(remainder, i, ft_strlen_gnl(remainder) - i);
 	free (remainder);
 	remainder = temp;
 	if (!remainder || !*remainder)
