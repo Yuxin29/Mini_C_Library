@@ -18,12 +18,10 @@ static int	ft_format(char c, va_list args)
 		return (ft_putchar(va_arg(args, int)));
 	else if (c == 's')
 		return (ft_putstr(va_arg(args, char *)));
-	else if (c == 'd')
-		return (ft_putdec(va_arg(args, int)));
-	else if (c == 'i')
-		return (ft_putint(va_arg(args, int)));
 	else if (c == 'u')
 		return (ft_putdecu(va_arg(args, unsigned int)));
+	else if (c == 'd' || c == 'i')
+		return (ft_putdec(va_arg(args, int)));
 	else if (c == 'x')
 		return (ft_puthexlower(va_arg(args, unsigned int)));
 	else if (c == 'X')

@@ -22,7 +22,6 @@ int	ft_printf(const char *str, ...);
 int	ft_putchar(char c);
 int	ft_putstr(char *s);
 int	ft_putptr(void *ptr);
-int	ft_putint(int i);
 int	ft_putdec(int i);
 int	ft_putdecu(unsigned int i);
 int	ft_puthexlower(unsigned int i);

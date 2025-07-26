@@ -11,19 +11,11 @@
 # **************************************************************************** #
 
 NAME := libftprintf.a
-HEADERS := ft_printf.h
+HEADERS := include/ft_printf.h
 CFLAGS := -Wall -Wextra -Werror
 CC := cc
 
-SRCS := ft_printf.c \
-		ft_putchar.c \
-		ft_putstr.c	\
-		ft_putptr.c \
-		ft_putint.c \
-		ft_putdec.c \
-		ft_putdecu.c \
-		ft_puthexlower.c \
-		ft_puthexupper.c \
+SRCS := $(wildcard src/*.c)
 
 OBJS := $(SRCS:%.c=%.o)
 
@@ -31,7 +23,7 @@ $(NAME): $(OBJS)
 		ar -rcs $@ $^
 
 %.o: %.c $(HEADERS)
-		$(CC) $(CFLAGS) -c $< -o $@
+		$(CC) $(CFLAGS) -Iinclude -c $< -o $@
 
 all: $(NAME)
 

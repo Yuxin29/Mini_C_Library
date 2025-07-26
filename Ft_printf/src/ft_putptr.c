@@ -11,73 +11,41 @@
 /* ************************************************************************** */
 
 // %p The void * pointer argument has to be printed in hexadecimal format
-
 #include "ft_printf.h"
 
-static char	*get_zero(void)
-{
-	char	*nbr;
-
-	nbr = malloc(sizeof(char) * 2);
-	if (!nbr)
-		return (NULL);
-	nbr[0] = '0';
-	nbr[1] = '\0';
-	return (nbr);
-}
-
-static int	get_length(uintptr_t n)
-{
-	int	count;
-
-	count = 0;
-	while (n >= 1)
-	{
-		n /= 16;
-		count++;
-	}
-	return (count);
-}
-
-static char	*get_posi_hex(uintptr_t n)
+static int	ft_puthexlower_uintptr(uintptr_t i)
 {
 	int		count;
-	char	*nbr;
+	int		rest;
+	char	*hex;
 
-	if (n == 0)
-		return (get_zero());
-	count = get_length(n);
-	nbr = malloc(sizeof(char) * (count + 1));
-	if (!nbr)
-		return (NULL);
-	nbr[count] = '\0';
-	while (n > 0)
+	hex = "0123456789abcdef";
+	if (i == 0)
+		return (ft_putstr("0"));
+	count = 0;
+	if (i >= 16)
 	{
-		if ((n % 16) >= 10)
-			nbr[--count] = (n % 16) - 10 + 'a';
-		else
-			nbr[--count] = (n % 16) + '0';
-		n = n / 16;
+		rest = ft_puthexlower(i / 16);
+		if (rest == -1)
+			return (-1);
+		count += rest;
 	}
-	return (nbr);
+	if (ft_putchar(hex[i % 16]) == -1)
+		return (-1);
+	return (count + 1);
 }
 
 int	ft_putptr(void *ptr)
 {
 	uintptr_t	address;
 	int			count;
-	char		*trans;
 
 	if (!ptr)
 		return (ft_putstr("(nil)"));
 	address = (uintptr_t)ptr;
 	if (ft_putstr("0x") == -1)
 		return (-1);
-	trans = get_posi_hex(address);
-	if (!trans)
-		return (-1);
-	count = ft_putstr(trans);
-	free (trans);
+	count = ft_puthexlower_uintptr(address);
 	if (count == -1)
 		return (-1);
 	return (2 + count);

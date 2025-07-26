@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putdec.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuwu <yuwu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/08 12:22:39 by yuwu              #+#    #+#             */
-/*   Updated: 2025/05/08 12:34:29 by yuwu             ###   ########.fr       */
+/*   Created: 2025/05/06 20:08:34 by yuwu              #+#    #+#             */
+/*   Updated: 2025/05/10 15:34:17 by yuwu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putdec(int i)
+int	ft_putstr(char *s)
 {
-	int	count;
+	int	i;
 
-	count = ft_putint(i);
-	if (count == -1)
-		return (-1);
-	return (count);
+	i = 0;
+	if (!s)
+		return (write(1, "(null)", 6));
+	while (s[i])
+	{
+		if (ft_putchar(s[i]) == -1)
+			return (-1);
+		i++;
+	}
+	return (i);
 }
