@@ -12,6 +12,7 @@
 
 #include "get_next_line.h"
 
+// get the length of a char
 size_t	ft_strlen_gnl(char *str)
 {
 	size_t	count;
@@ -24,6 +25,7 @@ size_t	ft_strlen_gnl(char *str)
 	return (count);
 }
 
+// return the str where the char c first appeared, including null
 char	*ft_strchr_gnl(const char *str, int c)
 {
 	if (!str)
@@ -39,6 +41,7 @@ char	*ft_strchr_gnl(const char *str, int c)
 	return (NULL);
 }
 
+// a customized strjoin
 char	*ft_strjoin_gnl(char *str1, char *str2)
 {
 	size_t	l1;
@@ -68,6 +71,7 @@ char	*ft_strjoin_gnl(char *str1, char *str2)
 	return (join);
 }
 
+// get a substring from the index start and with the length of len
 char	*ft_substr_gnl(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;

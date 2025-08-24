@@ -18,6 +18,7 @@ notes of new things used in get_next_line
 
 #include "get_next_line.h"
 
+// read a buffer
 static char	*ft_read_buffer(int fd, char *left_c)
 {
 	ssize_t		bytes_read;
