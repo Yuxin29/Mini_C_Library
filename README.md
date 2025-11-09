@@ -15,6 +15,7 @@ A low-level implementation of a function to read a file line-by-line, managing b
 ft_printf - Custom printf() from basic write()
 A fully functional recreation of the C printf() function, supporting various format specifiers (%d, %s, %x, etc.) and flags. Built to deepen understanding of variadic functions.
 
+
 🛠️ Usage
 Requirements    C compiler (like gcc)
 
@@ -29,6 +30,7 @@ $ make re      # Recompile everything
 
 - Use it in your code
 #include "libft.h"
+
 
 📋 Testing
 I used multiple online testers to test my libft. These testers has different emphasises, covering different edge cases.
