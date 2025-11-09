@@ -1,3 +1,5 @@
+My hand-make C-library
+
 libft	📘 Custom C Standard Library	
 A custom-built version of key C standard library functions (like strlen, atoi, memcpy) written in C from scratch. Built for performance and deep understanding of memory management.
 
