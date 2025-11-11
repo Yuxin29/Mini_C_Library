@@ -40,11 +40,30 @@ A functional recreation of the standard `printf()` function, using only basic `w
 
 ---
 
-## 🧱 Directory Structure
 
+## ⚙️ Usage
 
+### 🔧 Requirements
+- GCC or any standard C compiler  
+- Make utility
 
-📋 Testing
+### 🏗️ Compilation
+
+Run the following in each library’s directory:
+
+```bash
+$ make          # Compile all mandatory functions
+$ make bonus    # Compile extra bonus functions
+$ make clean    # Remove object files
+$ make fclean   # Remove object files and static library
+$ make re       # Recompile everything from scratch
+
+### 💡 Include in Your Project
+#include "libft.h"
+and compile with:
+gcc your_file.c -L. -lft
+
+##  📋 Testing
 I used multiple online testers to test my libft. These testers has different emphasises, covering different edge cases.
 There are cases where my libft does not pass all tests, but I have reasoned it and compromised for a balanced solution.
 Testers that I used include:
