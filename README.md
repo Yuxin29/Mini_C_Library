@@ -69,5 +69,3 @@ There are cases where my libft does not pass all tests, but I have reasoned it a
 Testers that I used include:
 Tripouille/LibftTester
 
-born2beroot	🛡️ Linux Server Hardening (Born2BeRoot)	
-A project focused on system administration and cybersecurity, configuring a Linux VM with strict user permissions, firewall rules, and SSH key access.
