@@ -1,35 +1,47 @@
-My hand-make C-library
+# 🧰 My Handmade C Libraries
 
-💡 About
+> A collection of foundational C libraries built from scratch to deepen understanding of memory management, strings, and low-level programming.
 
-There is three basic library I made for future C projects
+---
 
-libft - custom C library that I make from scratch.
-The point is to understand memory, pointer and string functions in C standard library.
-The workflow is the check the definition of each c funtion from the manual, understand it and re-implement it myself.
-The library is used for all my following  C projects, and I keep reimforce it and make it more robust with the projects going on.
+## 💡 About
 
-get_next_line - Line-by-Line File Reader in C	
-A low-level implementation of a function to read a file line-by-line, managing buffers and memory efficiently. Handles edge cases like newline placement and buffer overflow.
+This repository contains **three base libraries** I built for future C projects at 42 and beyond:
 
-ft_printf - Custom printf() from basic write()
-A fully functional recreation of the C printf() function, supporting various format specifiers (%d, %s, %x, etc.) and flags. Built to deepen understanding of variadic functions.
+### 🧩 libft
+A custom reimplementation of the C standard library — built from scratch to fully understand memory, pointers, and core functions.
 
+- Reimplements standard C library functions (`strlen`, `memcpy`, `atoi`, etc.)
+- Includes a `bonus` part with linked list utilities (`t_list`)
+- Used as a base library for all following C projects
+- Continuously reinforced and improved through each new project
 
-🛠️ Usage
-Requirements    C compiler (like gcc)
+---
 
-Instructions
-- Go to the library directory and run:
-$ make
-- Other available make commands:
-$ make bonus   # Compile extra bonus functions  
-$ make clean   # Delete object files  
-$ make fclean  # Delete object files and the static library  
-$ make re      # Recompile everything  
+### 📜 get_next_line
+**Line-by-line file reader in C**
 
-- Use it in your code
-#include "libft.h"
+A low-level implementation of a function that reads files line by line, managing buffers and memory efficiently.
+
+- Handles newline placements, buffer overflows, and EOF correctly  
+- Supports multiple file descriptors via the bonus version  
+- Helps master buffer logic, memory allocation, and static variables
+
+---
+
+### 🖨️ ft_printf
+**Custom implementation of `printf()`**
+
+A functional recreation of the standard `printf()` function, using only basic `write()` calls.
+
+- Supports format specifiers: `%c`, `%s`, `%p`, `%d`, `%i`, `%u`, `%x`, `%X`, `%%`
+- Built to understand **variadic functions** and formatted output
+- Used across other projects for formatted logging and debugging
+
+---
+
+## 🧱 Directory Structure
+
 
 
 📋 Testing
