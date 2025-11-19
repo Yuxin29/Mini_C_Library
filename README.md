@@ -42,9 +42,11 @@ $ make re       # Recompile everything from scratch
 ```
 
 ## Include in Your Project
+```
 #include "libft.h"
 and compile with:
 gcc your_file.c -L. -lft
+```
 
 ##  Testing
 I used multiple online testers to test my libft. These testers has different emphasises, covering different edge cases.
