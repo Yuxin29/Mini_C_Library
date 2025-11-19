@@ -30,7 +30,14 @@ A functional recreation of the standard `printf()` function, using only basic `w
 
 ## Usage
 
-1. Compilation
+1. Clone the repository
+
+```
+git clone https://github.com/Yuxin29/Mini_C_Library.git
+cd Mini_C_Library
+```
+
+2. Compilation
 Run the following in each library’s directory:
 
 ```
@@ -41,7 +48,7 @@ $ make fclean   # Remove object files and static library
 $ make re       # Recompile everything from scratch
 ```
 
-## Include in Your Project
+3. Include in Your Project
 ```
 #include "libft.h"
 and compile with:
